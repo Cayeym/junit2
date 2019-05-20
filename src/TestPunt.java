@@ -11,23 +11,30 @@ public class TestPunt {
     @Test
     public void testPuntBuit() {
         // comprova que el constructor Punt() deixi a 0 els valors
-        Punt p = new Punt();
+        Punt p = new Punt(0 ,0);
         assertEquals(0, p.getX()); // Afirma que la coordenada x val 0
         assertEquals(0, p.getY());
     }
     @Test
     public void testSetXCorrect(){
-        Punt p = new Punt();
+        Punt p = new Punt(2, 3);
         p.setX(2);
-        assertEquals(3, p.getX());
-        assertEquals(2, p.getY());
+        assertEquals(2, p.getX());
+        assertEquals(3, p.getY());
     }
     @Test
     public void testSetYCorrect(){
-        Punt p = new Punt();
+        Punt p = new Punt(2, 3);
         p.setY(3);
+        assertEquals(3, p.getY());
+        assertEquals(2, p.getX());
+    }
+    @Test
+    public void testPuntDefinit() {
+        // comprova que el constructor Punt(int,int) deixi els valors correctes
+        Punt p = new Punt(3, 4);
+        assertEquals(3, p.getX());
         assertEquals(4, p.getY());
-        assertEquals(1, p.getX());
     }
 
     public static void main(String args[]) {
