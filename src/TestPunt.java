@@ -42,7 +42,20 @@ public class TestPunt {
         Punt b = new Punt();
         p.suma(b);
     }
-
+    @Test
+    public void testPuntIllegalArgumentException(){
+        Punt p = new Punt(-1, -1);
+    }
+    @Test
+    public void testPuntIllegalArgumentExceptionGetX(){
+        Punt p = new Punt(2, 1);
+        p.setX(-3);
+    }
+    @Test
+    public void testPuntIllegalArgumentExceptionGetY(){
+        Punt p = new Punt(2, 1);
+        p.setY(-13);
+    }
     public static void main(String args[]) {
         org.junit.runner.JUnitCore.main("TestPunt");
     }
