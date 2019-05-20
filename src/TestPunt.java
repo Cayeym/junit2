@@ -1,4 +1,6 @@
 import org.junit.*;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.*;
 
 public class TestPunt {
@@ -42,16 +44,16 @@ public class TestPunt {
         Punt b = new Punt();
         p.suma(b);
     }
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void testPuntIllegalArgumentException(){
         Punt p = new Punt(-1, -1);
     }
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void testPuntIllegalArgumentExceptionGetX(){
         Punt p = new Punt(2, 1);
         p.setX(-3);
     }
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void testPuntIllegalArgumentExceptionGetY(){
         Punt p = new Punt(2, 1);
         p.setY(-13);
